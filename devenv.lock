@@ -1,0 +1,81 @@
+{
+  "nodes": {
+    "devenv": {
+      "locked": {
+        "dir": "src/modules",
+        "lastModified": 1792164733,
+        "narHash": "sha256-ECKkG5ldtOnpoCa4rhldJ7BXSR7Owp5NsiFCB7u9+uY=",
+        "owner": "cachix",
+        "repo": "devenv",
+        "rev": "0b7e9055a96160091bc1b8dcea6e6771fcfd1a62",
+        "type": "github"
+      },
+      "original": {
+        "dir": "src/modules",
+        "owner": "cachix",
+        "repo": "devenv",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1779560665,
+        "narHash": "sha256-tpyBcxPpcQb8ukyNF7DoCwfSY3VPsxHoYwj00Cayv5o=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "64c08a7ca051951c8eae34e3e3cb1e202fe36786",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "64c08a7ca051951c8eae34e3e3cb1e202fe36786",
+        "type": "github"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1779560665,
+        "narHash": "sha256-tpyBcxPpcQb8ukyNF7DoCwfSY3VPsxHoYwj00Cayv5o=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "64c08a7ca051951c8eae34e3e3cb1e202fe36786",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "patchmill": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1792391168,
+        "narHash": "sha256-p90Ws/9SJu9JHw1QVNsYkIMxdpWBSnbjhBqwh22WecE=",
+        "owner": "rochecompaan",
+        "repo": "patchmill",
+        "rev": "b6c1215ebb94f8ac6fb0ef3be0e6a7c82ba3b8c9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "rochecompaan",
+        "repo": "patchmill",
+        "rev": "b6c1215ebb94f8ac6fb0ef3be0e6a7c82ba3b8c9",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "devenv": "devenv",
+        "nixpkgs": "nixpkgs",
+        "patchmill": "patchmill"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
