@@ -76,13 +76,13 @@ This is one reviewable deliverable: the static page, build setup, and instructio
 - Produces: `dist/` as generated production output, never committed.
 - No exported functions or domain types are necessary for this static shell.
 
-- [ ] **Step 1: Establish the starting point.**
+- [x] **Step 1: Establish the starting point.**
   Run `git status --short`, `node --version`, and `npm --version`.
   Expected: no unexpected edits, Node.js `v24.x`, and a working npm command.
   Read the specification and existing README before changes.
   Record the initial commit and verification evidence in the execution ledger.
 
-- [ ] **Step 2: Create the package and TypeScript configuration.**
+- [x] **Step 2: Create the package and TypeScript configuration.**
   Set the package name to `team-lunch-poll`, with `private: true`, `type: "module"`, and `engines.node: ">=24"`.
   Add the four scripts from the Interfaces block.
   Select stable Vite and TypeScript releases that support Node.js 24 as development dependencies.
@@ -90,7 +90,7 @@ This is one reviewable deliverable: the static page, build setup, and instructio
   Use `lib: ["ES2022", "DOM", "DOM.Iterable"]`, `strict: true`, `noEmit: true`, and `include: ["src"]`.
   Add `/// <reference types="vite/client" />` to `src/vite-env.d.ts`.
 
-- [ ] **Step 3: Create the static shell and stylesheet.**
+- [x] **Step 3: Create the static shell and stylesheet.**
   Set `lang="en"`, UTF-8 encoding, and `width=device-width, initial-scale=1.0` viewport metadata in `index.html`.
   Add the exact title and heading from Global Constraints.
   Use the description `Help your team decide where or what to eat together.`
@@ -101,7 +101,7 @@ This is one reviewable deliverable: the static page, build setup, and instructio
   Use system fonts, readable contrast, flexible widths, border-box sizing, and normal document flow in `src/style.css`.
   Avoid fixed minimum widths and unnecessary controls, assets, dependencies, or demo content.
 
-- [ ] **Step 4: Document the workflow in `README.md`.**
+- [x] **Step 4: Document the workflow in `README.md`.**
   Retain the project context, Demo workflow, and Source of truth sections.
   Replace only the obsolete claim that the repository contains documentation and prompts only.
   Add an app section with Node.js 24 and npm prerequisites, and commands from the repository root.
@@ -110,18 +110,18 @@ This is one reviewable deliverable: the static page, build setup, and instructio
   State that preview requires a production build first.
   State that credentials, environment variables, and a database are unnecessary.
 
-- [ ] **Step 5: Generate and exercise the lockfile.**
+- [x] **Step 5: Generate and exercise the lockfile.**
   Run `npm install`, then `npm ci`.
   Expected: both exit zero on Node.js 24, and `package-lock.json` records the dependency tree.
   Inspect `git status --short --ignored`.
   Expected: dependencies remain ignored, and no unrelated generator artifacts exist.
 
-- [ ] **Step 6: Run the contributor checks.**
+- [x] **Step 6: Run the contributor checks.**
   Run `npm run check` and `npm run build`.
   Expected: both exit zero, and the build creates `dist/index.html` plus local assets.
   Inspect the script definitions to verify that `build` runs TypeScript checks before Vite.
 
-- [ ] **Step 7: Inspect the development page in a browser.**
+- [x] **Step 7: Inspect the development page in a browser.**
   Run `npm run dev` and open the printed URL.
   Expected: the server starts and prints its local URL.
   Inspect at 320 CSS pixels and at a desktop width of 1280 CSS pixels.
@@ -132,13 +132,13 @@ This is one reviewable deliverable: the static page, build setup, and instructio
   Expected: no app errors in the browser console and no external font, image, or service requests.
   Stop the server with Ctrl+C.
 
-- [ ] **Step 8: Inspect the production preview.**
+- [x] **Step 8: Inspect the production preview.**
   Run `npm run preview` after the successful build and open its printed URL.
   Expected: the same shell, readable styles, successful local asset requests, and no app errors in the console.
   Stop the preview server with Ctrl+C.
   Record browser inspection results in the execution ledger. Do not claim unavailable browser checks as passed.
 
-- [ ] **Step 9: Review and commit the deliverable.**
+- [x] **Step 9: Review and commit the deliverable.**
   Walk through the README commands and compare their descriptions with the observed outputs.
   Review the full diff against the specification and all five Review Focus conditions.
   Run `npm run check && npm run build` and `git diff --check`.
@@ -163,3 +163,29 @@ The interfaces match the file map and npm commands.
 All five Review Focus conditions have explicit direct verification steps.
 No application behavior, dependency versions, or static text requires a maintained automated test in this issue.
 The merged specification PR (#13) has no review comments or unresolved decisions.
+
+## Implementation evidence
+
+- Starting commit: `c8e21f3`; Node.js `v24.15.0`, npm `11.12.1`.
+- Baseline `npm test` failed with ENOENT because no package manifest or test suite
+  existed. No automated suite was added, per the Testing Value Gate above.
+- `npm install` and clean `npm ci` succeeded with zero reported vulnerabilities.
+  `npm run check`, `npm run build`, and `git diff --check` succeeded.
+  Dependencies and production output remain ignored.
+- Development printed `http://127.0.0.1:5173/`; production preview printed
+  `http://127.0.0.1:4173/`. Both served the shell and local styles/modules.
+- Playwright with system Chromium inspected both servers at 320 and 1280 CSS
+  pixels, plus 200% desktop zoom emulation (640 CSS pixels at device scale 2).
+  This emulates zoom reflow rather than exercising browser zoom controls.
+  All checks found one main, one h1, the ordered h2 headings, no controls,
+  no overlap or horizontal scrolling, no console/page errors, no failed requests,
+  and no external service requests. Both sections remained accessible on scroll.
+- Initial browser inspection caught an automatic favicon 404; an empty inline
+  favicon eliminated it, and all six browser inspections then passed.
+- Visually reviewed screenshots show readable text and complete placeholders:
+  `docs/screenshots/team-lunch-poll-mobile.png` and
+  `docs/screenshots/team-lunch-poll-desktop.png`. Screenshots are added beyond
+  the original File Map as implementation visual-review evidence.
+- README command walkthrough matched observed behavior. Existing Demo workflow,
+  Source of truth, Patchmill configuration, environment files, prompts, and
+  `E2E.md` remain intact. No external fonts, assets, or services were introduced.
