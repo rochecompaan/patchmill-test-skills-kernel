@@ -54,17 +54,17 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1792401582,
-        "narHash": "sha256-2/mVXudybr4qp4LCe5bN7tDKaxGrgWyfQa066tDHDJA=",
+        "lastModified": 1792440965,
+        "narHash": "sha256-7wE2er1derwo0ynVLzrVs0bQawlmguxWWiub+1x0MlI=",
         "owner": "rochecompaan",
         "repo": "patchmill",
-        "rev": "951e24c359fc8dafca10814e0b60160bcc547035",
+        "rev": "21e1ff8336c02c8196472470e89724d24e74f46a",
         "type": "github"
       },
       "original": {
         "owner": "rochecompaan",
         "repo": "patchmill",
-        "rev": "951e24c359fc8dafca10814e0b60160bcc547035",
+        "rev": "21e1ff8336c02c8196472470e89724d24e74f46a",
         "type": "github"
       }
     },
