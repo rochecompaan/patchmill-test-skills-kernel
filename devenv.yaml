@@ -3,7 +3,7 @@ inputs:
   nixpkgs:
     url: github:NixOS/nixpkgs/64c08a7ca051951c8eae34e3e3cb1e202fe36786
   patchmill:
-    url: github:rochecompaan/patchmill/b6c1215ebb94f8ac6fb0ef3be0e6a7c82ba3b8c9
+    url: github:rochecompaan/patchmill/951e24c359fc8dafca10814e0b60160bcc547035
     flake: true
 
 # If you're using non-OSS software, you can set allow_unfree to true.

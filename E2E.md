@@ -1,7 +1,7 @@
 # Skills-first kernel test environment
 
 This disposable repository contains the Patchmill poll-app fixture and 12 GitHub issues.
-The environment pins Patchmill to commit `b6c1215ebb94f8ac6fb0ef3be0e6a7c82ba3b8c9` on `architecture/skills-first-kernel`.
+The environment pins Patchmill to commit `951e24c359fc8dafca10814e0b60160bcc547035` on `architecture/skills-first-kernel`.
 The input fetches that published commit from GitHub. The lock records its exact revision and content hash.
 The repository is public: https://github.com/rochecompaan/patchmill-test-skills-kernel.
 

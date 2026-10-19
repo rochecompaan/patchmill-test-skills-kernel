@@ -14,7 +14,7 @@
   };
 
   enterShell = ''
-    printf '\nPatchmill skills-first kernel test repository (b6c1215).\n'
+    printf '\nPatchmill skills-first kernel test repository (951e24c).\n'
     printf 'Read E2E.md before running live tests. No models run on shell entry.\n\n'
   '';
 }
